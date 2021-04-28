@@ -1,3 +1,10 @@
+---
+layout:     post
+header-img: img/post-bg-ios9-web.jpg
+catalog: true
+tags:
+    - DesignPattern
+---
 装饰器可以想象给某样东西进行装饰，比如说给一辆车进行改装，可以改个轮毂，也可以改个排气，也可以改个大灯等等。改装完后，老板需要计算总共花了多少钱，那就需要把改装的项目花费进行合计，就可以用装饰器模式。像一个物品传给快递员，快递员把货进行包装，司机拿到一麻袋的物品，有点一环扣一环的感觉。
 
 参考：[https://phpenthusiast.com/blog/the-decorator-design-pattern-in-php-explained](https://phpenthusiast.com/blog/the-decorator-design-pattern-in-php-explained)

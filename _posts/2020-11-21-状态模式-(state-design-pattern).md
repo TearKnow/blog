@@ -1,4 +1,10 @@
-
+---
+layout:     post
+header-img: img/post-bg-ios9-web.jpg
+catalog: true
+tags:
+    - DesignPattern
+---
  参考《大话设计模式》
   当有很多if else判断的时候，要修改一段if else里的逻辑，会显得很容易出错，而且不容易维护，这时可以使用状态模式
   场景：按照上班时间11点前干活，11-13点休息，13点之后干活。如果明天放假，说今天13点之后就下班，那么只要改一个类就行了，方便修改

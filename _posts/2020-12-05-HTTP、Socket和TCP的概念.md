@@ -1,3 +1,11 @@
+---
+layout:     post
+author:     YF
+header-img: img/post-bg-ios9-web.jpg
+catalog: true
+tags:
+    - 网络
+---
 网络有7层模型，一般都简化为5层：
 应用层：主要是文件传输，电子邮件等应用层的服务，类似HTTP、FTP、SMTP等
 传输层：提供端对端的接口，类似TCP、UDP

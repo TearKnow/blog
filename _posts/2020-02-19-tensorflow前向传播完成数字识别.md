@@ -1,3 +1,10 @@
+---
+layout:     post
+header-img: img/post-bg-ios9-web.jpg
+catalog: true
+tags:
+    - Tensorflow
+---
 简单利用梯度的方法，更新权值，使得loss降低。
 涉及到矩阵的相乘，[a, b]@[b, c] => [a, c]，
 下面代码有三个层

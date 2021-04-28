@@ -1,3 +1,10 @@
+---
+layout:     post
+header-img: img/post-bg-ios9-web.jpg
+catalog: true
+tags:
+    - Laravel
+---
 **背景：web.php中Route::get() 调用的是哪个类下的方法**
 这里的Route其实是个别名，在config/app.php中有设置，可以自己新建一个别名，然后在web.php里试下，知道了这个点后，就可以慢慢发现里面的奥秘。
 ```

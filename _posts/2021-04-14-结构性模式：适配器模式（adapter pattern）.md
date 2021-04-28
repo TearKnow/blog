@@ -1,3 +1,10 @@
+---
+layout:     post
+header-img: img/post-bg-ios9-web.jpg
+catalog: true
+tags:
+    - DesignPattern
+---
 适配器模式是Adapter，也称Wrapper，是指如果一个接口需要B接口，但是待传入的对象却是A接口，怎么办？
 所以引出定义适配器模式是指：定义一个类，将一个已经存在的类，转换成目标接口所期望的行为形式。
 

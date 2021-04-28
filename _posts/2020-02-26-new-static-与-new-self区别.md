@@ -1,3 +1,11 @@
+---
+layout:     post
+author:     YF
+header-img: img/post-bg-ios9-web.jpg
+catalog: true
+tags:
+    - PHP
+---
 在laravel中，使用了Symfony来创建请求的，里面有这么一段
 
 ```

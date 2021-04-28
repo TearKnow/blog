@@ -1,3 +1,11 @@
+---
+layout:     post
+author:     YF
+header-img: img/post-bg-ios9-web.jpg
+catalog: true
+tags:
+    - Other
+---
 也是很奇怪的一件事情，在本地host文件设置了一个127.0.0.1 test.abc.com的关系
 然后php进行curl的时候，死活会超时
 

@@ -1,3 +1,11 @@
+---
+layout:     post
+author:     YF
+header-img: img/post-bg-ios9-web.jpg
+catalog: true
+tags:
+    - Other
+---
 背景：本机ip 192.168.3.118，虚拟机ip 192.168.3.101，需要在虚拟机上安装es，虚拟机上有建A用户，es不允许root用户启动，没注明root用户的，都是A用户操作。
 
 1. 下载elasticsearch-7.6.1.tar.gz 版本

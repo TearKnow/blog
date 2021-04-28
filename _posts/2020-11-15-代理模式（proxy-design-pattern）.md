@@ -1,3 +1,10 @@
+---
+layout:     post
+header-img: img/post-bg-ios9-web.jpg
+catalog: true
+tags:
+    - DesignPattern
+---
 代理模式在访问对象的时候引入一定程度的间接性，realSubject和proxy需要实现相同的接口
 ```
 <?php

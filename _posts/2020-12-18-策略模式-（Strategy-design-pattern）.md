@@ -1,3 +1,10 @@
+---
+layout:     post
+header-img: img/post-bg-ios9-web.jpg
+catalog: true
+tags:
+    - DesignPattern
+---
 策略模式定义了一系列的算法，并将每一个算法封装起来，而且使它们还可以相互替换。策略模式让算法独立于使用它的客户而独立变化，即封装变化的算法。
 在这个例子中有move的一系列算法，和attack的一系列算法。使用它们的客户可以随意改变move的方式或者attack的方式。
 

@@ -1,3 +1,10 @@
+---
+layout:     post
+header-img: img/post-bg-ios9-web.jpg
+catalog: true
+tags:
+    - DesignPattern
+---
 使用多个简单的对象一步一步构建成一个复杂的对象，可能是需要有顺序的。这种类型的设计模式属于创建型模式，它提供了一种创建对象的最佳方式
 
 优点：

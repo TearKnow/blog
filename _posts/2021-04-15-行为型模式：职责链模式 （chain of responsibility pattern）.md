@@ -1,3 +1,10 @@
+---
+layout:     post
+header-img: img/post-bg-ios9-web.jpg
+catalog: true
+tags:
+    - DesignPattern
+---
 职责链模式（又叫责任链模式），可以一级级把请求往下传递下去。
 
 ```

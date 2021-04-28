@@ -1,3 +1,11 @@
+---
+layout:     post
+author:     YF
+header-img: img/post-bg-ios9-web.jpg
+catalog: true
+tags:
+    - Other
+---
 php版本7.2
 去官网下载了xdebug 3.0.1的版本，死活调试不成功，后来换成Xdebug 2.9.6就可以了，太坑了
 

@@ -1,3 +1,10 @@
+---
+layout:     post
+header-img: img/post-bg-ios9-web.jpg
+catalog: true
+tags:
+    - Golang
+---
 在看https://github.com/GuoZhaoran/spikeSystem案例的时候发现有用channel作为锁的功能，看了下不太明白，所以自己写了个小例子，能成功模拟出锁的功效，成功的例子，使用ab模拟高并发，貌似是串行的，因为能明显感受到请求baidu的100个链接
 
 并发命令：ab -n 100 -c 100 192.168.1.53:3005/sayHi

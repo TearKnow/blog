@@ -1,3 +1,10 @@
+---
+layout:     post
+header-img: img/post-bg-ios9-web.jpg
+catalog: true
+tags:
+    - Laravel
+---
 array_reduce的使用，利用管道可以指定的东西传递给每个任务，然后将结果返回给下一个任务，有点类似装饰器的感觉，见例子[https://www.jianshu.com/p/4108e3aa723e](https://www.jianshu.com/p/4108e3aa723e)
 
 ```

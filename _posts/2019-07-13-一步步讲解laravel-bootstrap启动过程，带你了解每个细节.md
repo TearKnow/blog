@@ -1,3 +1,10 @@
+---
+layout:     post
+header-img: img/post-bg-ios9-web.jpg
+catalog: true
+tags:
+    - Laravel
+---
 **背景：想知道web.php这个文件是如何被加载运行的**
 
 在sendRequestThroughRouter()中会启动一些类

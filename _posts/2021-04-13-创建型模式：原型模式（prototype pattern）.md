@@ -1,3 +1,10 @@
+---
+layout:     post
+header-img: img/post-bg-ios9-web.jpg
+catalog: true
+tags:
+    - DesignPattern
+---
 这里只是介绍一下原型模式的核心思想，其实在实际开发中直接clone即可。
 ```
 <?php

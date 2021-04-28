@@ -1,3 +1,10 @@
+---
+layout:     post
+header-img: img/post-bg-ios9-web.jpg
+catalog: true
+tags:
+    - Tensorflow
+---
 找出2d函数的最小值 f(x, y) = (x^2 + y - 11)^2 + (x + y^2 - 7)^2，有4个最小值，根据初始化的默认值的不同，回得到不同的结果
 ```
 def myFunc(x):#矩阵运算

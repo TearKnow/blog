@@ -1,3 +1,10 @@
+---
+layout:     post
+header-img: img/post-bg-ios9-web.jpg
+catalog: true
+tags:
+    - DesignPattern
+---
 比如在用pdo连接数据库的时候，可以用单例模式，那么就可以不需要一直new PDO了，减少资源使用
 ```
 <?php

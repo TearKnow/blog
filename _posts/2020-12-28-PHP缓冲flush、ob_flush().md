@@ -1,3 +1,11 @@
+---
+layout:     post
+author:     YF
+header-img: img/post-bg-ios9-web.jpg
+catalog: true
+tags:
+    - PHP
+---
 以下代码可以实现类型js一样的效果，每隔1秒往浏览器输出一个值，主要用了flush方法，数据强制输出到浏览器，不然数据会到配置的buffer值，才往浏览器传输
 
 环境：xampp，windows。使用windows+nginx不行，可能是nginx里也有fastcgi_buffer的限制
