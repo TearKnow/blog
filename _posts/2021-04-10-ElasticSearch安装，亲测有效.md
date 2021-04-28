@@ -40,4 +40,4 @@ firewall-cmd --reload
 ```
 firewall-cmd --zone=public --list-ports 可以查看所有开放的端口，有9200了
 
-7.最后./elasticsearch -d  可以在后台启动，本机也可以192.168.3.101:9200在浏览器访问了。
+7. 最后./elasticsearch -d  可以在后台启动，本机也可以192.168.3.101:9200在浏览器访问了。
