@@ -7,7 +7,7 @@ tags:
     - PHP
 ---
 laravel框架中有很多实现了ArrayAccess这个接口，那么这个接口有什么用呢，看字面意思就是像数组一样使用，实际的效果也是这样的，要实现这个接口需要重新4个方法，举例如下
-```
+```php
 <?php
 class test implements ArrayAccess{
 	public function offsetExists($param){

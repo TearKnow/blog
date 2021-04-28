@@ -10,7 +10,7 @@ tags:
 然后php进行curl的时候，死活会超时
 
 aa.php文件内容
-```
+```php
 $ch = curl_init();
 $sUrl = 'http://192.168.3.5/bb.php';//192.168.3.5是本机ip地址 bb.php里就是打印了一串东西
 

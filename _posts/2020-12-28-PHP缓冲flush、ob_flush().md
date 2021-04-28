@@ -10,7 +10,7 @@ tags:
 
 环境：xampp，windows。使用windows+nginx不行，可能是nginx里也有fastcgi_buffer的限制
 
-```
+```php
 <?php
 for ($i = 0; $i < 10; $i++) {
     echo $i.'<br />';

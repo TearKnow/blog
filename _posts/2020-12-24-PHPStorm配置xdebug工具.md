@@ -11,8 +11,13 @@ php版本7.2
 
 php.ini
 zend_extension = php_xdebug-2.9.6-7.2-vc15-x86_64.dll
+
 xdebug.remote_enable = 1
+
 xdebug.remote_host=localhost
+
 xdebug.remote_port=9003
+
 xdebug.remote_autostart=1
+
 xdebug.idekey="PHPSTORM"

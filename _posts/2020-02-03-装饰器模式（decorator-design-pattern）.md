@@ -9,7 +9,7 @@ tags:
 
 参考：[https://phpenthusiast.com/blog/the-decorator-design-pattern-in-php-explained](https://phpenthusiast.com/blog/the-decorator-design-pattern-in-php-explained)
 
-```
+```php
 <?php  
 /** 
  * 场景：买一辆车SUV, SPORTSCAR，算出总的价格和描述有哪些功能。 

@@ -9,7 +9,7 @@ tags:
 
 并发命令：ab -n 100 -c 100 192.168.1.53:3005/sayHi
 
-```
+```golang
 package main
 
 import (
@@ -51,7 +51,7 @@ func main() {
 }
 ```
 
-1. 错误1
+### 1. 错误1
 如果把网络channel去掉，像下面的代码，则打印的globalnum就是错的了，次数类似打印1个1和99个2，其实在并发100个的时候，就请求了2次baidu
 ```
 func sayHi(w http.ResponseWriter, r *http.Request)  {
@@ -68,7 +68,7 @@ func sayHi(w http.ResponseWriter, r *http.Request)  {
 }
 ```
 
-2. 在#1的基础上，不请求网络，也就是不需要耗时的情况时，是打印1~100
+### 2. 在#1的基础上，不请求网络，也就是不需要耗时的情况时，是打印1~100
 ```
 func sayHi(w http.ResponseWriter, r *http.Request)  {
 	//x := <-done
@@ -84,7 +84,7 @@ func sayHi(w http.ResponseWriter, r *http.Request)  {
 }
 ```
 
-3. 这样写也是可以的
+### 3. 这样写也是可以的
 ```
 package main
 
