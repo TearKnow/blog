@@ -20,12 +20,12 @@ import (
 )
 
 var (
-	done chan int
+    done chan int
 )
 
 func init() {
-	done = make(chan int, 1)
-	done <- 1
+    done = make(chan int, 1)
+    done <- 1
 }
 
 var globalnum = 1
@@ -33,16 +33,16 @@ var globalnum = 1
 //为什么 https://github.com/GuoZhaoran/spikeSystem 里需要 done <- 1 这样的，但是去掉又不对。但是在这个例子中又不会有问题
 
 func sayHi(w http.ResponseWriter, r *http.Request)  {
-	x := <-done
-	fmt.Println(globalnum) //在终端打印的
+    x := <-done
+    fmt.Println(globalnum) //在终端打印的
     fmt.Fprint(w, x) //页面上打印的
-	
-	rsp , _:= http.Get("http://www.baidu.com")
-	_ = rsp
-	
-	globalnum += 1
-	
-	done <- 1
+    
+    rsp , _:= http.Get("http://www.baidu.com")
+    _ = rsp
+    
+    globalnum += 1
+    
+    done <- 1
 }
 
 func main() {
@@ -55,32 +55,32 @@ func main() {
 如果把网络channel去掉，像下面的代码，则打印的globalnum就是错的了，次数类似打印1个1和99个2，其实在并发100个的时候，就请求了2次baidu
 ```
 func sayHi(w http.ResponseWriter, r *http.Request)  {
-	//x := <-done
-	fmt.Println(globalnum) //在终端打印的
+    //x := <-done
+    fmt.Println(globalnum) //在终端打印的
     //fmt.Fprint(w, x) //页面上打印的
-	
-	rsp , _:= http.Get("http://www.baidu.com")
-	_ = rsp
-	
-	globalnum += 1
-	
-	//done <- 1
+    
+    rsp , _:= http.Get("http://www.baidu.com")
+    _ = rsp
+    
+    globalnum += 1
+    
+    //done <- 1
 }
 ```
 
 ### 2. 在#1的基础上，不请求网络，也就是不需要耗时的情况时，是打印1~100
 ```
 func sayHi(w http.ResponseWriter, r *http.Request)  {
-	//x := <-done
-	fmt.Println(globalnum) //在终端打印的
+    //x := <-done
+    fmt.Println(globalnum) //在终端打印的
     //fmt.Fprint(w, x) //页面上打印的
-	
-	//rsp , _:= http.Get("http://www.baidu.com")
-	//_ = rsp
-	
-	globalnum += 1
-	
-	//done <- 1
+    
+    //rsp , _:= http.Get("http://www.baidu.com")
+    //_ = rsp
+    
+    globalnum += 1
+    
+    //done <- 1
 }
 ```
 
@@ -110,7 +110,7 @@ var globalnum = 1
 
 func sayHi(w http.ResponseWriter, r *http.Request)  {
     
-	done <- 1
+    done <- 1
     fmt.Println(globalnum) //在终端打印的
     
     
@@ -120,7 +120,7 @@ func sayHi(w http.ResponseWriter, r *http.Request)  {
     globalnum += 1
     
     x := <-done
-	fmt.Fprint(w, x) //页面上打印的
+    fmt.Fprint(w, x) //页面上打印的
 }
 
 func main() {
@@ -138,7 +138,7 @@ https://studygolang.com/articles/6024
 怎么理解上面那句话呢，就是缓冲区里满了，下次在写入会被阻塞。比如如下代码，缓冲区满了，后面的第二次就被阻塞了，第一次的接受方一直没获取，导致代码被阻塞了（接收方在有值可以接收之前会一直阻塞）。
 ```
 func sayHi(w http.ResponseWriter, r *http.Request)  {
-	done <- 1
+    done <- 1
     fmt.Println(globalnum) //在终端打印的
     
     rsp , _:= http.Get("http://www.baidu.com")
@@ -147,6 +147,6 @@ func sayHi(w http.ResponseWriter, r *http.Request)  {
     globalnum += 1
     
     //x := <-done
-	fmt.Fprint(w, 1) //页面上打印的
+    fmt.Fprint(w, 1) //页面上打印的
 }
 ```
