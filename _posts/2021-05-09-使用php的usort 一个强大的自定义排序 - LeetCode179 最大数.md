@@ -4,7 +4,7 @@ header-img: img/post-bg-ios9-web.jpg
 catalog: true
 tags:
     - Algorithm
-	- PHP
+    - PHP
 ---
 
 在做leetcode179的时候，没思路，看了题解后，发现人家几行代码就搞定了，主要用了usort这个内置函数
