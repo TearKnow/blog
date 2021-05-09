@@ -59,7 +59,7 @@ usort($nums, 'mysort');
 var_dump($nums);
 ```
 
-### 例3 leetcode 179 使用usort解
+### 例3.1 leetcode 179 使用usort解
 ```php
 <?php 
 
@@ -74,5 +74,47 @@ function largestNumber($nums) {
 $nums = [3,30,34,5,9];
 $result = largestNumber($nums);
 
+echo $result;
+```
+
+### 例3.2 leetcode 179 用类似快速排序，找一个基准的方式
+```php
+<?php 
+//以最后一个值为基准，组合大于基准的，放到基准左边去，组合小于的，放到基准右边去
+function largestNumber($nums) {
+    if(!array_sum($nums)){
+        return '0';
+    }
+    //先形成数组
+    $arr = getLargestNumArr($nums);
+    return implode('', $arr);
+}
+
+function getLargestNumArr($nums){
+    $i = 0;
+    $baseIndex = count($nums) - 1;//最右的为基准了
+    $leftValue = $rightValue = [];
+    while($i < $baseIndex){
+        if($nums[$i] . $nums[$baseIndex] > $nums[$baseIndex].$nums[$i]){
+            $leftValue[] = $nums[$i];
+        }else{
+            $rightValue[] = $nums[$i];
+        }
+        $i++;
+    }
+
+    $newLeft = $newRight = [];
+    if($leftValue){
+        $newLeft = getLargestNumArr($leftValue);
+    }
+    if($rightValue){
+        $newRight = getLargestNumArr($rightValue);
+    }
+
+    return array_merge($newLeft, [$nums[$baseIndex]], $newRight);
+}
+
+$nums = [3,30,34,5,9];
+$result = largestNumber($nums);
 echo $result;
 ```
