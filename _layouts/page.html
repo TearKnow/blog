@@ -183,6 +183,15 @@ layout: default
                         {% if site.email %}
                             <p>✉️ {{site.email}}</p>
                         {% endif %}
+
+                        {% assign count = 0 %}
+                        {% for post in site.posts %}
+                            {% assign single_count = 1 %}
+                            {% assign count = count | plus: single_count %}
+                        {% endfor %}
+                        <p>All Posts: {{ count }}</p>
+
+
                     </div>
                 </section>
                 <!-- Friends Blog -->
