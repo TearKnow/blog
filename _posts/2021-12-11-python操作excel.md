@@ -19,15 +19,10 @@ tags:
 ```python
 
 from openpyxl import Workbook, load_workbook
-
 from openpyxl.utils import get_column_letter
-
 from openpyxl.styles import Font
 
-
-
 #参考文献：https://openpyxl.readthedocs.io/en/stable/
-
 
 
 # wb = load_workbook('excel.xlsx')
