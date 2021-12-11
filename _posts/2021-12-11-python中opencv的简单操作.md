@@ -6,7 +6,7 @@ tags:
     - Python
 ---
 
-目的：学习opencv，例子中用到的文件在files\opencvFiles目录下
+目的：学习opencv，例子中用到的文件在files\opencvFiles目录下。视频地址：本机videos\python\opencv\opencv图形识别.mp4
 
 ```python
 import cv2
