@@ -157,10 +157,7 @@ from openpyxl.styles import Font
 #step10 练习
 
 wb = Workbook()
-
 ws = wb.active
-
-
 
 data = [
     {
