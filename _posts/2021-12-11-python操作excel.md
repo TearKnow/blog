@@ -163,80 +163,42 @@ ws = wb.active
 
 
 data = [
-
     {
-
         'name': '小白',
-
         'tall': 180,
-
         'age': 23,
-
         'weight': 83
-
     },
-
     {
-
         'name': '小白1',
-
         'tall': 181,
-
         'age': 21,
-
         'weight': 81
-
     },
-
     {
-
         'name': '小白2',
-
         'tall': 182,
-
         'age': 22,
-
         'weight': 82
-
     },
-
 ]
 
-
-
 title = ['姓名', '身高', '年纪', '体重']
-
 ws.append(title)
 
-
-
 for person in data:
-
     ws.append(list(person.values()))
 
-
-
 for col in range(2, 5):
-
     char = get_column_letter(col)
-
     ws[char + '5'] = f'=AVERAGE({char + "2"}: {char + "4"})'  #用函数来计算平均值
-
-
 
 #标题加粗
 
 for col in range(1, 5):
-
     char = get_column_letter(col)
-
     ws[char + '1'].font = Font(bold=True, color="000000FF")
-
-
-
 wb.save('data.xlsx')
-
-
 
 
 
