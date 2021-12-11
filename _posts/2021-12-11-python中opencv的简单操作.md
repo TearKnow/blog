@@ -25,8 +25,8 @@ while True:
     else:
         break
 
-    #waitKey是读取一帧的时间
-    if cv2.waitKey(20) == ord('q'):
+    if cv2.waitKey(20) == ord('q'):     #waitKey是读取一帧的时间
+
         break
 
 
