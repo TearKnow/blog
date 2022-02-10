@@ -29,7 +29,7 @@
 </style>
 
 
-
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
 <script src="https://frontwatch.jjshouse.com/src/web-report-default.js?20127636d2fc3a"></script>
 <script src="https://www.jjshouse.com/public/gaea/js/vendor.js?20127636d2fc3a"></script>
 
@@ -108,7 +108,195 @@ var webData = {
 </div>
         
 
+<script>
 
+(function($) {
+	jQuery.fn.jFocus = function(o) {
+ 
+		o = jQuery.extend({
+				meta: "li",
+				event: "click",
+				currClass: "curr",
+				firstShow: 0,
+				width: 0,
+				height: 0,
+				auto: 0,
+				time: 3000,
+				scrollTime:400
+			},
+			o);
+		return this.each(function() {
+			var c = $(this);
+			var d = "<div class='jfocus'></div>";
+			c.wrapInner(d);
+			var e = $(o.meta, c),
+				count = e.size(),
+				index = [];
+			for (var i = 1; i <= count; i++) {
+				index.push("<a href='#'><em>" + '' + "</em></a>")
+			};
+			var f = "<span class='index'>" + index.join("") + "</span><p class='overlay'></p>";
+			var g = e.find(".infos"),
+				$jfocus = $(".jfocus", c);
+			$jfocus.append(f).css({
+				height: o.height || c.height(),
+				width: o.width || c.width()
+			});
+			g.appendTo($jfocus);
+			var h = $(".index a", c);
+
+			index = 0;
+
+			var clickFilterTimer;
+			var clickValid = true;
+			var isScrolling = false;
+			var ulOfFocus = $jfocus.find("ul");
+
+			var scroll = function(fromIndex,toIndex, direction){
+				if (isScrolling) {
+					return false;
+				} else {
+					isScrolling = true;
+				}
+
+				var width = o.width || c.width();
+
+				var fromLi = ulOfFocus.children("li").eq(fromIndex);
+				var toLi = ulOfFocus.children("li").eq(toIndex);
+
+				var animateScroll = function(element, fromPos, toPos, completed) {
+					element.show();
+					element.css({'left': fromPos + 'px'});
+					element.animate({
+						'left': toPos + 'px'
+					}, {
+						duration: o.scrollTime,
+						complete: completed
+					});
+				};
+
+                var animateGradualChange = function(fromEle, toEle, completed) {
+					fromEle.hide();
+					toEle.css({'opacity': 0.05});
+                    toEle.show();
+                    toEle.animate({
+                        'opacity': '1'
+                    }, {
+                        duration: 2000,
+                        complete: gradualChangeCompleted
+                    });
+                };
+
+				// Used for the element which is scrolled out of the view
+				var scrollCompleted = function() {
+					$(this).css({'left': '0px', 'display': 'none'});
+					isScrolling = false;
+				};
+
+                var gradualChangeCompleted = function() {
+                    isScrolling = false;
+                };
+
+                if(ulOfFocus.parents('.auto_banner').length > 0) {
+                    animateGradualChange(fromLi, toLi, gradualChangeCompleted);
+                } else {
+                    if (direction) {
+                        animateScroll(fromLi, 0, -width, scrollCompleted);
+                        animateScroll(toLi, width, 0, null);
+                    } else {
+                        animateScroll(fromLi, 0, width, scrollCompleted);
+                        animateScroll(toLi, -width, 0, null);
+                    }
+				}
+				return true;
+			};
+
+			var scrollByDir = function(direction){
+				var toIndex;
+				var result;
+				if (direction) {
+					toIndex = (index == e.size()-1) ? 0 : index+1;
+				} else {
+					toIndex = (index == 0) ? e.size()-1 : index-1;
+				}
+
+				result = scroll(index,toIndex, direction);
+
+				if (result) {
+					index = toIndex;
+				}
+			}
+
+			var clickFilter = function(direction) {
+				if (clickValid) {
+					clickValid = false;
+					scrollByDir(direction);
+				}
+				clearTimeout(clickFilterTimer);
+				clickFilterTimer = setTimeout(function () {
+					clickValid = true;
+				}, o.scrollTime);
+			};
+
+			c.parent().parent().find(".arrowLeft").bind("click",function(){
+				clickFilter(false);
+				return false;
+			});
+			c.parent().parent().find(".arrowRight").bind("click",function(){
+				clickFilter(true);
+				return false;
+			});
+
+			ulOfFocus.children().hide();
+			ulOfFocus.children("li").eq(index).show();
+
+            if (o.auto) {
+				var l;
+				// according to UserAgent choose different action
+				//var userAgent = new UserAgent();
+				if("ontouchend" in document){
+					c.parent().parent().find(".arrowLeft, .arrowRight").bind('touchstart',function(){
+						clearTimeout(l)
+					}).bind('touchend',function(){
+						clearTimeout(l);
+						l = setTimeout(m, o.time)
+					});
+				} else {
+					c.children().hover(function() {
+							clearTimeout(l)
+						},
+						function() {
+							clearTimeout(l);
+							l = setTimeout(m, o.time)
+						});
+					c.parent().parent().find(".arrowLeft, .arrowRight").hover(function() {
+							clearTimeout(l)
+						},
+						function() {
+							clearTimeout(l);
+							l = setTimeout(m, o.time)
+						});
+				}
+				var m = function() {
+					clickFilter(true);
+					clearTimeout(l);
+					l = setTimeout(m, o.time)
+				};
+				clearTimeout(l);
+				l = setTimeout(m, o.time)
+			}
+		})
+	}
+})(jQuery);
+
+
+
+$('.focus').jFocus({
+		event : 'click',
+		auto : 1,
+		time : 5000
+	});
+</script>
 
  
         
