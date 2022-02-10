@@ -250,7 +250,7 @@ var webData = {
 			ulOfFocus.children().hide();
 			ulOfFocus.children("li").eq(index).show();
 
-            if (o.auto && 0) {
+            if (o.auto) {
 				var l;
 				// according to UserAgent choose different action
 				//var userAgent = new UserAgent();
@@ -294,7 +294,7 @@ var webData = {
 $('.focus').jFocus({
 		event : 'click',
 		auto : 1,
-		time : 5000
+		time : 500000
 	});
 </script>
 
