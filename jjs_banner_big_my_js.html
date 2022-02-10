@@ -5109,11 +5109,28 @@ You can describe the product from quality, style, fitness, material etc."></text
     require('common')
 </script>
 
-<script src="https://tearknow.github.io/blog/js/jjs/index.js"></script>
 <script>
-    require('index')
-</script>
 
+        var getMergedBannerSize = function() {
+            var bannerWidth;
+            var bannerHeight;
+            var clientWidth = window.innerWidth;
+            var clientRealWidth = $(window).width();
+            if(clientWidth > 990) {
+                bannerWidth = clientRealWidth * 1920 / 1920;
+                bannerHeight = clientRealWidth * 550 / 1920;
+            }else {
+                bannerWidth = 990;
+                bannerHeight = 284;
+            }
+            return {"bannerWidth":bannerWidth,"bannerHeight":bannerHeight};
+        }
+        var $index = $(".index_auto_banner");
+        var reSizeSelector = "img, ul, li, .focus, .focus_wrap, .jfocus, .narrow_banner_content, .wide_banner, .merged-carousel-banner";
+        var bannerSize = getMergedBannerSize();
+        $index.find(reSizeSelector).css({'width': bannerSize.bannerWidth+'px', 'height': bannerSize.bannerHeight+'px'});
+        $index.css({'height': bannerSize.bannerHeight+'px'});
+</script>
 
           <script type="text/javascript"> var axel = Math.random() + ""; var a = axel * 10000000000000; document.write('<iframe src="https://4333216.fls.doubleclick.net/activityi;src=4333216;type=js_count;cat=home_page;ord=' + a + '?" width="1" height="1" frameborder="0" style="display:none"></iframe>'); </script> <noscript> <iframe src="https://4333216.fls.doubleclick.net/activityi;src=4333216;type=js_count;cat=home_page;ord=1?" width="1" height="1" frameborder="0" style="display:none"></iframe> </noscript>
         
