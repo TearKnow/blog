@@ -166,13 +166,14 @@ var webData = {
 
 				var animateScroll = function(element, fromPos, toPos, completed) {
 					element.show();
-					element.css({'left': fromPos + 'px'});
+					element.css({'left': toPos + 'px'});
 					element.animate({
 						'left': toPos + 'px'
 					}, {
 						duration: o.scrollTime,
 						complete: completed
 					});
+                    
 				};
 
                 var animateGradualChange = function(fromEle, toEle, completed) {
