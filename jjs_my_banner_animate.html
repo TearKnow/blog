@@ -16,15 +16,22 @@
     .jfocus ul{
         width: 990px;
         height: 488px;
-        overflow:hidden;
+        overflow: hidden;
     }
     .jfocus ul li{
         width: 990px;
         height: 488px;
+        list-style: none;
+        position: absolute;
+        top: 0;
     }
     .jfocus, .focus{
         width: 990px;
         height: 488px;
+    }
+    .focus_wrap{
+        overflow: hidden;
+        position: relative;
     }
 </style>
 
@@ -295,7 +302,7 @@ var webData = {
 $('.focus').jFocus({
 		event : 'click',
 		auto : 1,
-		time : 3000
+		time : 2000
 	});
 </script>
 
