@@ -129,7 +129,7 @@ var webData = {
 				height: 0,
 				auto: 0,
 				time: 3000,
-				scrollTime:400
+				scrollTime:40000
 			},
 			o);
 		return this.each(function() {
@@ -173,9 +173,9 @@ var webData = {
 
 				var animateScroll = function(element, fromPos, toPos, completed) {
 					element.show();
-					element.css({'left': toPos + 'px'});
+					element.css({'left': fromPos + 'px'});
 					element.animate({
-						//'left': toPos + 'px'
+						'left': toPos + 'px'
 					}, {
 						duration: o.scrollTime,
 						complete: completed
