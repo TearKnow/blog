@@ -6,7 +6,7 @@ tags:
     - ElasticSearch
 ---
 
-遇到一个场景，不同的国家有不同的price，然后新增了price字段，需要放入到elastic search中，因为有些是小数点，有些整数，期望index/_mapping GET是那些价格字段是float，而不是long（整型类型），如果是long，可能存入的是小数，但是聚合（比如排序）会是整数了
+遇到一个场景，不同的国家有不同的price，然后新增了price字段，需要放入到ElasticSearch中，因为有些是小数点，有些整数，期望index/_mapping GET是那些价格字段是float，而不是long（整型类型），如果是long，可能存入的是小数，但是聚合（比如排序）会是整数了
 
 现在新增字段类型是直接根据插入时，es自己判断类型。所以会有这样一个问题，如果第一条插入的是整型，那就完蛋了会变成long类型，第一条是小数的那就运气好会是期望的float。
 
@@ -14,7 +14,7 @@ tags:
 
 
 
-看网站代码以前的那种金额的都套了个floatval()，这次新增的print字段也是对的，而且index/_mapping GET也是float。
+看网站代码以前的那种金额的都套了个floatval()，这次新增的price字段也是对的，而且index/_mapping GET也是float。
 
 看搜索项目中就不对，也用了floatval()，搞不懂为什么。后来就用了个恶心的方法加了0.00001，这样会强制变成float
 
