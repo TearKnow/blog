@@ -77,18 +77,3 @@ service-worker: true
 # Friends
 
 
-plugins:
-  - jekyll-sitemap
-
-
-sitemap:
-  # 排除不想包含在sitemap中的文件/目录
-  exclude:
-    - "/css/"
-    - "/js/"
-    - "/less/"
-    - "/img/"
-  # 设置更改频率（可选）
-  changefreq: "weekly"
-  # 设置优先级（可选）
-  priority: 0.7
